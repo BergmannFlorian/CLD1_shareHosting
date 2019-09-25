@@ -20,13 +20,9 @@ __Informations Login :__
 
 __Informations Réseaux :__
 - __Type :__ NAT
-- __Bridged Network Card :__ 10.229.42.31 255.255.240.0
 - __Server Name :__ cornflakes
-- __Parameters :__ all base
-
-## Config network
-- iface ens32 inet dhcp
-- iface ens34 inet static
+- __Card NAT Config :__ iface ens32 inet dhcp
+- __Card Bridged Config :__ iface ens34 inet static
     - address 10.229.42.31
     - netmask 255.255.240.0
     - network 10.229.42.0
@@ -35,7 +31,7 @@ __Informations Réseaux :__
     - dns-nameservers 10.229.28.22 10.229.28.2
     - dns-domain cpnv.ch
     - dns-search cpnv.ch
-#### DOCUMENTATION EXTERNE
-    
----
+
+
+# DOCUMENTATION EXTERNE
 [Synthaxe Markdown](https://markdown-it.github.io/)
