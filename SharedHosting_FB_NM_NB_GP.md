@@ -1,8 +1,7 @@
-## VERSION
+# VM
 
 
 
-## VM INFO
 compte nimda
 mdp: WTP666cbx  
 compte root  
@@ -22,6 +21,9 @@ iface eth0 inet static
     network 10.229.42.0
     broadcast 10.229.42.255
     gateway 10.229.32.1
+    dns-nameservers 10.229.28.22 10.229.28.2
+    dns-domain cpnv.ch
+    dns-search cpnv.ch
 
 #### DOCUMENTATION EXTERNE
 
