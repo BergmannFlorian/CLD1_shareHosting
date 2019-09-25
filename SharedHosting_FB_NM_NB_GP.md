@@ -1,7 +1,8 @@
-# VM
+## VERSION
 
 
 
+## VM INFO
 compte nimda
 mdp: WTP666cbx  
 compte root  
@@ -21,3 +22,8 @@ iface eth0 inet static
     network 10.229.42.0
     broadcast 10.229.42.255
     gateway 10.229.32.1
+
+#### DOCUMENTATION EXTERNE
+
+---
+[Synthaxe Markdown](https://markdown-it.github.io/)
