@@ -32,8 +32,22 @@ __Informations Réseaux :__
     - dns-domain cpnv.ch
     - dns-search cpnv.ch
 
-
 # DOCUMENTATION EXTERNE
 [Synthaxe Markdown](https://markdown-it.github.io/)
-
 [Vidéo Tutoriel, Création d'un serveur web Nginx par Grafikart](https://www.youtube.com/watch?v=cfJh8vdKuQU&list=PLjwdMgw5TTLUnvhOKLcpCG8ORQsfE7uB4)
+
+# A AJOUTER DANS CE DOCUMENT
+## Paquest installés
+- ufw `apt-get install ufw`
+    ports ouverts: 80, 443, 22  
+    `ufw allow 80`  
+    `ufw allow 443`
+    `ufw allow 22`  
+
+- fail2ban `apt-get install fail2ban`
+- sudo `apt-get install sudo`
+    tous le droits sudo à nimda `nimda  ALL=(ALL:ALL) ALL`
+
+
+## Config ssh
+mdp clé privée: "lasaintesaucisse"
