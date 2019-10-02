@@ -15,7 +15,7 @@ __Informations Login :__
 - __Id Admin :__ root
 - __Mdp :__ WTP666cbx
 
-- __Id :__ Nimda.
+- __Id :__ Nimda. 
 - __Mdp :__ WTP666cbx
 
 __Informations Réseaux :__
@@ -34,13 +34,14 @@ __Informations Réseaux :__
 
 # DOCUMENTATION EXTERNE
 [Synthaxe Markdown](https://markdown-it.github.io/)
+[Vidéo Tutoriel, Création d'un serveur web Nginx par Grafikart](https://www.youtube.com/watch?v=cfJh8vdKuQU&list=PLjwdMgw5TTLUnvhOKLcpCG8ORQsfE7uB4)
 
 # A AJOUTER DANS CE DOCUMENT
 ## Paquest installés
 - ufw `apt-get install ufw`
     ports ouverts: 80, 443, 22  
     `ufw allow 80`  
-    `ufw allow 443`  
+    `ufw allow 443`
     `ufw allow 22`  
 
 - fail2ban `apt-get install fail2ban`
