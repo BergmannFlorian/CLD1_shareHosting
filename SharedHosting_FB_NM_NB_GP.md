@@ -15,7 +15,7 @@ __Informations Login :__
 - __Id Admin :__ root
 - __Mdp :__ WTP666cbx
 
-- __Id :__ Nimda.
+- __Id :__ Nimda. 
 - __Mdp :__ WTP666cbx
 
 __Informations Réseaux :__
@@ -35,3 +35,5 @@ __Informations Réseaux :__
 
 # DOCUMENTATION EXTERNE
 [Synthaxe Markdown](https://markdown-it.github.io/)
+
+[Vidéo Tutoriel, Création d'un serveur web Nginx par Grafikart](https://www.youtube.com/watch?v=cfJh8vdKuQU&list=PLjwdMgw5TTLUnvhOKLcpCG8ORQsfE7uB4)
