@@ -12,3 +12,7 @@ Amélioration de la sécurité :
 Modifier "#PermitRootLogin: prohibit-passsword" -> "#PermitRootLogin: no"
 
 - vim /etc/ssh/sshd_config
+
+
+###Vidéo Grafikart avancement
+Vu millieu de vidéo Mise en place serveur SSH, jusquà création clé
