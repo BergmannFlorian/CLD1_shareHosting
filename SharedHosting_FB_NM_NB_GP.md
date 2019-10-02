@@ -15,7 +15,7 @@ __Informations Login :__
 - __Id Admin :__ root
 - __Mdp :__ WTP666cbx
 
-- __Id :__ Nimda. 
+- __Id :__ nimda. 
 - __Mdp :__ WTP666cbx
 
 __Informations Réseaux :__
