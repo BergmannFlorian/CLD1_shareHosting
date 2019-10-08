@@ -15,7 +15,7 @@ __Informations Login :__
 - __Id Admin :__ root
 - __Mdp :__ WTP666cbx
 
-- __Id :__ nimda 
+- __Id :__ Nimda. 
 - __Mdp :__ WTP666cbx
 
 __Informations Réseaux :__
@@ -32,11 +32,7 @@ __Informations Réseaux :__
     - dns-domain cpnv.ch
     - dns-search cpnv.ch
 
-# DOCUMENTATION EXTERNE
-[Synthaxe Markdown](https://markdown-it.github.io/)
-[Vidéo Tutoriel, Création d'un serveur web Nginx par Grafikart](https://www.youtube.com/watch?v=cfJh8vdKuQU&list=PLjwdMgw5TTLUnvhOKLcpCG8ORQsfE7uB4)
-
-# A AJOUTER DANS CE DOCUMENT
+__Install :__ apt-get install mariadb-server -y
 ## Paquest installés
 - ufw `apt-get install ufw`
     ports ouverts: 80, 443, 22  
@@ -51,3 +47,14 @@ __Informations Réseaux :__
 
 ## Config ssh
 mdp clé privée: "lasaintesaucisse"
+
+## MariaDb Config (test)
+__Install :__ apt-get install mariadb-server -y
+
+__Config :__  
+#mysql_secure_config  
+Change root password : no  
+Remove anonymous user : yes  
+Disallow root login remotely : yes  
+Remove test database ... : yes  
+Reload privilege table now : yes  
