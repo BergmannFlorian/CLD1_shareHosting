@@ -15,7 +15,7 @@ __Informations Login :__
 - __Id Admin :__ root
 - __Mdp :__ WTP666cbx
 
-- __Id :__ nimda 
+- __Id :__ Nimda. 
 - __Mdp :__ WTP666cbx
 
 __Informations Réseaux :__
@@ -32,6 +32,7 @@ __Informations Réseaux :__
     - dns-domain cpnv.ch
     - dns-search cpnv.ch
 
+__Install :__ apt-get install mariadb-server -y
 ## Paquest installés
 - ufw `apt-get install ufw`
     ports ouverts: 80, 443, 22, 3306
