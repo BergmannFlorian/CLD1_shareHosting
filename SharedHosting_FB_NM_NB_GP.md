@@ -41,7 +41,7 @@ __Informations Réseaux :__
 - ufw `apt-get install ufw`
     ports ouverts: 80, 443, 22  
     `ufw allow 80`  
-    `ufw allow 443`
+    `ufw allow 443`  
     `ufw allow 22`  
 
 - fail2ban `apt-get install fail2ban`
@@ -50,4 +50,4 @@ __Informations Réseaux :__
 
 
 ## Config ssh
-mdp clé privée: "lasaintesaucisse"
+mdp clé privée: "WTP666cbx"
