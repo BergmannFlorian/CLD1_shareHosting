@@ -15,7 +15,7 @@ __Informations Login :__
 - __Id Admin :__ root
 - __Mdp :__ WTP666cbx
 
-- __Id :__ Nimda. 
+- __Id :__ nimda 
 - __Mdp :__ WTP666cbx
 
 __Informations Réseaux :__
@@ -32,17 +32,13 @@ __Informations Réseaux :__
     - dns-domain cpnv.ch
     - dns-search cpnv.ch
 
-# DOCUMENTATION EXTERNE
-[Synthaxe Markdown](https://markdown-it.github.io/)
-[Vidéo Tutoriel, Création d'un serveur web Nginx par Grafikart](https://www.youtube.com/watch?v=cfJh8vdKuQU&list=PLjwdMgw5TTLUnvhOKLcpCG8ORQsfE7uB4)
-
-# A AJOUTER DANS CE DOCUMENT
 ## Paquest installés
 - ufw `apt-get install ufw`
-    ports ouverts: 80, 443, 22  
+    ports ouverts: 80, 443, 22, 3306
     `ufw allow 80`  
     `ufw allow 443`  
     `ufw allow 22`  
+    `ufw allow 3306`  
 
 - fail2ban `apt-get install fail2ban`
 - sudo `apt-get install sudo`
@@ -51,3 +47,24 @@ __Informations Réseaux :__
 
 ## Config ssh
 mdp clé privée: "WTP666cbx"
+
+## MariaDb Config (test)
+__Install :__ 
+$apt-get install mariadb-server -y
+
+__Config :__  
+$mysql_secure_config  
+Change root password : no  
+Remove anonymous user : yes  
+Disallow root login remotely : yes  
+Remove test database ... : yes  
+Reload privilege table now : yes
+
+$nano /etc/mysql/mariadb.conf.d/50-server.cnf  
+__Mettre les lignes suivantes en commentaire :__
+#skip-external-locking
+#bind-address            = 127.0.0.1
+
+__Ajout d'utilisateur :__
+#mariadb
+`CREATE USER maria@'%' IDENTIFIED BY 'WTP666cbx';`
