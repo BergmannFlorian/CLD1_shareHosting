@@ -51,28 +51,32 @@ __Install :__ apt-get install mariadb-server -y
 Ajouter la clé publique dans le fichier `~/.ssh/authorized_keys`  
 Modifier le fichier `/etc/ssh/sshd_config` et configurer les paramètres suivants:  
 - `PubkeyAuthentification` -> `yes`
-- `PasswordAuthentification` -> `no`
-Redémarrer le serveur ssh. `systemctl restart ssh`
+- `PasswordAuthentification` -> `no`  
+
+Redémarrer le serveur ssh. `systemctl restart ssh`  
 .mdp clé privée: "WTP666cbx"
 
-## MariaDb Config (test)
+## MariaDb Config
 __Install :__ 
 `apt-get install mariadb-server -y`
 
 __Config :__  
-`mysql_secure_config`  
+`mysql_secure_installation`  
 Change root password : no  
 Remove anonymous user : yes  
 Disallow root login remotely : yes  
 Remove test database ... : yes  
 Reload privilege table now : yes  
 
-`nano /etc/mysql/mariadb.conf.d/50-server.cnf`  
-__Mettre les lignes suivantes en commentaire :__  
+`vim /etc/mysql/mariadb.conf.d/50-server.cnf`  
+_Mettre les lignes suivantes en commentaire :_  
 #skip-external-locking  
 #bind-address            = 127.0.0.1
 
-__Ajout admin db :__  
-`mariadb`  
-`CREATE USER maria@'%' IDENTIFIED BY 'WTP666cbx'`  
-`GRANT ALL ON \*.* TO 'maria'@'%'`
+_Redémarer le serveur_
+
+__Création script :__  
+`cd /home/nimda`  
+`touch addDB.sh`  
+`vim addDB.sh`  
+_Inclure le contenu de scripts/addDB.sh et enregistrer_
