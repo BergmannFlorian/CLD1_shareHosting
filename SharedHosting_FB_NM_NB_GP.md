@@ -81,6 +81,6 @@ __Ajout utilisateur + db + droits :__
 `mariadb`  
 `CREATE DATABASE [dbname];`  
 `CREATE USER [user]@'%' IDENTIFIED BY '[password]';`  
-`GRANT USAGE ON *.* TO '[user]'@'%';`    
+`GRANT USAGE ON *.* TO '[user]'@'%';`  
 `GRANT EXECUTE, SELECT, SHOW VIEW, ALTER, ALTER ROUTINE, CREATE, CREATE ROUTINE, CREATE TEMPORARY TABLES, CREATE VIEW, DELETE, INDEX, INSERT, REFERENCES, TRIGGER, UPDATE ON [dbname].* TO '[user]'@'%';`  
 `FLUSH PRIVILEGES;`
