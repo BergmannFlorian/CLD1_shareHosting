@@ -1,5 +1,9 @@
 ##Notes de tests sur machine par Noé
 
+##Intallation
+    - apt update
+    - apt upgrade
+
 ####Apt-get install
 
 - htop, permet d'afficher l'utilisation des ressources du server
@@ -23,12 +27,11 @@ Commande permettant la synchronisation de dossier et le déploiement de données
 
 -n : Dry Run, Affiche ce que la commande va faire sans l'exécuter
 
-###Nginx On Debian
+###Mise en place de Nginx
 ####- Installation
 
 Procéder aux commandes ci-dessous :
     
-    - sudo apt update
     - sudo apt install nginx
     
 ####- Paramètrage du par-feu
@@ -69,6 +72,16 @@ Restart le server :
 Réaliser des configurations sans perdre les connections :
 
     - sudo systemctl reload nginx
+    
+###Installation de PHP-FPM
+Installer le service :
+    
+    - sudo apt install php-fpm
+    
+###Mise en place de plusieurs site sur le server
+Modifier le fichier host présent sur l'ordinateur
+C:\Windows\System32\drivers\etc
+Ajouter 10.229.42.31 nomdusite.com
 
 ###Vidéo Grafikart avancement
 Mise en place de Nginx
@@ -77,3 +90,11 @@ Mise en place de Nginx
 Voir ce qu'est la configuration d'un socket en Nginx
 Mettre le user nginx dans un groupe pour qu'il lisent les donnée avec les droits
 avoir un dossier site en sous repertoire des dossiers utilisateurs
+
+###Conseils Dylan
+https://www.digitalocean.com/community/tutorials/how-to-host-multiple-websites-securely-with-nginx-and-php-fpm-on-ubuntu-14-04
+Voir ce lien pour isolation etc
+
+##DERNIERE FOIS 30 OCTOBRE FAIS
+Création de plusieurs sites fonctionnels
+Réaliser un markdown de toutes les actions à faire pour que flo crée un fichier bash avec
