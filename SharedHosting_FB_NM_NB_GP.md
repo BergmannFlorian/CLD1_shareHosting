@@ -31,22 +31,31 @@ __Informations Réseaux :__
     - dns-nameservers 10.229.28.22 10.229.28.2
     - dns-domain cpnv.ch
     - dns-search cpnv.ch
+##Avant de commencer :
+`apt update`
+`apt upgrade`
 
-__Install :__ apt-get install mariadb-server -y
-## Paquest installés
-- ufw `apt-get install ufw`
-    ports ouverts: 80, 443, 22, 3306
+## Installation du Firewall
+`apt-get install ufw`
+ 
+ Ports ouverts: 80, 443, 22, 3306
+ 
     `ufw allow 80`  
     `ufw allow 443`
     `ufw allow 22`  
     `ufw allow 3306`  
-
+##Installation du framework de prévention
 - fail2ban `apt-get install fail2ban`
-- sudo `apt-get install sudo`
-    tous le droits sudo à nimda `nimda  ALL=(ALL:ALL) ALL`
+
+##Installation de sudo
+`apt-get install sudo`
+
+Donner tous le droits sudo à nimda 
+    
+`nimda  ALL=(ALL:ALL) ALL`
 
 
-## Config ssh
+## Configuration SSH
 mdp clé privée: "lasaintesaucisse"
 
 ## MariaDb Config (test)
@@ -63,9 +72,13 @@ Reload privilege table now : yes
 
 $nano /etc/mysql/mariadb.conf.d/50-server.cnf  
 __Mettre les lignes suivantes en commentaire :__
-#skip-external-locking
-#bind-address            = 127.0.0.1
+
+`#skip-external-locking`
+
+`#bind-address            = 127.0.0.1`
 
 __Ajout d'utilisateur :__
-#mariadb
-#CREATE USER maria@'%' IDENTIFIED BY 'WTP666cbx';
+
+`#mariadb`
+
+`#CREATE USER maria@'%' IDENTIFIED BY 'WTP666cbx';`
