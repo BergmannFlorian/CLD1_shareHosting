@@ -31,6 +31,8 @@ __Card Bridged Config :__ iface ens34 inet static
 - dns-search cpnv.ch
 
 ## Paquest installés  
+`apt update`  
+`apt upgrade`  
 ufw  
 `apt-get install ufw`  
 ports ouverts: 80, 443, 22, 3306  
@@ -45,7 +47,6 @@ sudo
 tous le droits sudo à nimda  
 `nimda  ALL=(ALL:ALL) ALL`  
 
-
 ## Config ssh  
 `apt-get install openssh-server`  
 Ajouter la clé publique dans le fichier `~/.ssh/authorized_keys`  
@@ -58,21 +59,29 @@ Redémarrer le serveur ssh. `systemctl restart ssh`
 
 ## MariaDb Config
 __Install :__ 
-`apt-get install mariadb-server -y`
+$apt-get install mariadb-server -y
 
 __Config :__  
-`mysql_secure_installation`  
+$mysql_secure_config  
 Change root password : no  
 Remove anonymous user : yes  
 Disallow root login remotely : yes  
 Remove test database ... : yes  
-Reload privilege table now : yes  
+Reload privilege table now : yes
 
 `vim /etc/mysql/mariadb.conf.d/50-server.cnf`  
-_Mettre les lignes suivantes en commentaire :_  
-#skip-external-locking  
-#bind-address            = 127.0.0.1
+$nano /etc/mysql/mariadb.conf.d/50-server.cnf  
+__Mettre les lignes suivantes en commentaire :__
 
+`#skip-external-locking`
+
+`#bind-address            = 127.0.0.1`
+
+__Ajout d'utilisateur :__
+
+`#mariadb`
+
+`#CREATE USER maria@'%' IDENTIFIED BY 'WTP666cbx';`
 _Redémarer le serveur_
 
 __Création script :__  
