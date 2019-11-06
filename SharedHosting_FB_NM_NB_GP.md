@@ -50,15 +50,21 @@ __Informations Réseaux :__
 ##Installation de sudo
 `apt-get install sudo`
 
-Donner tous le droits sudo à nimda 
+Donner tout le droits sudo à nimda 
     
 `nimda  ALL=(ALL:ALL) ALL`
 
+## Configuration ssh  
+`apt-get install openssh-server`  
+Ajouter la clé publique dans le fichier `~/.ssh/authorized_keys`  
+Modifier le fichier `/etc/ssh/sshd_config` et configurer les paramètres suivants:  
+- `PubkeyAuthentification` -> `yes`
+- `PasswordAuthentification` -> `no`  
 
-## Configuration SSH
-mdp clé privée: "lasaintesaucisse"
+Redémarrer le serveur ssh. `systemctl restart ssh`  
+.mdp clé privée: "WTP666cbx"
 
-## MariaDb Config (test)
+## MariaDb Config
 __Install :__ 
 $apt-get install mariadb-server -y
 
@@ -70,6 +76,7 @@ Disallow root login remotely : yes
 Remove test database ... : yes  
 Reload privilege table now : yes
 
+`vim /etc/mysql/mariadb.conf.d/50-server.cnf`  
 $nano /etc/mysql/mariadb.conf.d/50-server.cnf  
 __Mettre les lignes suivantes en commentaire :__
 
@@ -82,3 +89,10 @@ __Ajout d'utilisateur :__
 `#mariadb`
 
 `#CREATE USER maria@'%' IDENTIFIED BY 'WTP666cbx';`
+_Redémarer le serveur_
+
+__Création script :__  
+`cd /home/nimda`  
+`touch addDB.sh`  
+`vim addDB.sh`  
+_Inclure le contenu de scripts/addDB.sh et enregistrer_
