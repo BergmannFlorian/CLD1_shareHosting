@@ -110,7 +110,13 @@ __Création script :__
 `vim addDB.sh`  
 _Inclure le contenu de scripts/addDB.sh et enregistrer_
 
+###Installation de PHP-FPM
+Installer le service :
+    
+    - sudo apt install php-fpm
+
 ###Mise en place de Nginx
+
 ####- Installation
 
 Procéder aux commandes ci-dessous :
@@ -133,15 +139,15 @@ Verifier votre ip :
 
     -ip addr show "interface" | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
     
-Changer le "interface" par l'interface principale de votre machine
+Changez le "interface" par l'interface principale de votre machine
 
 Faite la commande suivante pour trouver le nom de votre interface
 
     - ip a
 
-Remplacer le "interface" de la commande précédente par le nom de votre interface en ligne
+Remplacez le "interface" de la commande précédente par le nom de votre interface en ligne
 
-Accéder à votre site en tappant son ip dans la barre d'un navigateur
+Accédez à votre site en tappant son ip dans la barre d'un navigateur
 
 ####- Gérer le fonctionnement du server
 Stopper le server :
@@ -156,11 +162,68 @@ Restart le server :
 
     - sudo systemctl restart nginx
     
-Réaliser des configurations sans perdre les connections :
+Réalisez des configurations sans perdre les connections :
 
     - sudo systemctl reload nginx
+
+###Ajouter un site web
+Les informations placées entre les crochets [  ] vous sont propres.
+####Créer un nouvel utilisateur
+
+    - adduser [nomutilisateur]
+
+#### Ajouter l'utilisateur wwww-data au groupe du nouvel utilisateur
     
-###Installation de PHP-FPM
-Installer le service :
+    - usermod -a -G [nomutilisateur] www-data
+
+####Créer le fichier de configuration
+Accéder au dossier /etc/ningx/sites-available/
+
+    - cd /etc/ningx/sites-available/
+    - touch [nomsite.conf]
     
-    - sudo apt install php-fpm
+Ajoutez les informations suivante dans le fichier :
+
+    - sudo vim [nomsite.conf]
+    
+Copiez les informations ci-dessous :
+
+    - server {
+         listen 80;
+         listen [::]:80;
+      
+         root /home/nomutilisateur/[nomsite.com];
+      
+         index index.html;
+      
+         server_name [nomsite.com] www.[nomsite.com];
+      
+         location / {
+           try_files $uri $uri/ =404;
+         }
+       }
+    
+       
+####Création du symlink
+Pour permettre à votre site de fonctionner, réalisez un lien :
+
+    - sudo ln -s  /etc/nginx/sites-available/[nomdusite.conf] /etc/nginx/sites-enabled/[nomdusite.conf]
+    
+####Finalisation et permissions
+Mettez en place le dossier du site nomdusite.com dans /home/nomutilisateur/
+
+    - sudo chown -R nomutilisateur /home/[nomutilisateur]
+    
+Connectez-vous avec l'utilisateur concerné
+    
+    -su [nomutilisateur]
+    
+Changez les permissions du dossier concerné
+    
+    - sudo chmod -R 750 /home/[nomutilisateur]
+   
+Redémarrez votre server nginx
+
+    - systemctl restart nginx
+    
+Votre site est désormais disponible
