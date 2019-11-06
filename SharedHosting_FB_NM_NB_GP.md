@@ -262,3 +262,31 @@ Redémarrez votre server nginx
     - systemctl restart nginx
     
 Votre site est désormais disponible
+
+###Isolation
+L'isolation des utilisateurs est réalisée grâce à la gestion des permissions sur leur dossier /home/nomutilisateur  
+L'attribution de la propriété du dossier est faite pour l'utilisateur concerné,   
+Ensuite l'utilisateur concerné doit changer les droits de son dossier afin qu'il ait le droit de lecture, écriture et éxecution.
+Les droits doivent être fixés en lecture et exécution pour le groupe de l'utilisateur.  
+Les droits pour tout les autres doivent être nuls.
+
+En ce qui concerne l'isolation de la base de donnée, elle est réalisée grâce aux droits appliqués dans le script addUser.sh  
+Le droit "USAGE" sur une db ne permet d'avoir accès qu'à celle-ci.
+
+Lors de l'ajout d'un site, il faut reprendre les étapes de la section "Ajouter un site web"
+Pour avoir plusieurs sites de disponible au sein du serveur, il vous faudra configurer vos nom de domaines.
+Pour tester la disponibilité des sites sans nom de domaine, vous pouvez modifier le fichier "host" de votre ordinateur et y ajouter les informations comme ci-dessous :
+        
+        10.229.42.31 site1.com
+        10.229.42.31 site2.com
+       
+ Remplacez l'adresse ip par l'adresse de votre server.
+ 
+
+
+##Concernés
+Pereira Gabriel  
+Maitre Nicolas  
+Bergmann Florian  
+Berdoz Noé  
+SI-T1a
