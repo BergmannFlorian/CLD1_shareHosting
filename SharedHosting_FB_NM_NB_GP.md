@@ -60,8 +60,11 @@ tous le droits sudo à nimda
 ##Installation du framework de prévention
 - fail2ban `apt-get install fail2ban`
 
-##Installation de sudo
-`apt-get install sudo`
+#Installation de sudo
+- sudo `apt-get install sudo`
+    - ouvrir le fichier de config avec `visudo`
+    - tous le droits sudo à l'utilisateur nimda `nimda ALL=(ALL:ALL) ALL`  
+
 
 Donner tout le droits sudo à nimda 
     
@@ -75,7 +78,7 @@ Modifier le fichier `/etc/ssh/sshd_config` et configurer les paramètres suivant
 - `PasswordAuthentification` -> `no`  
 
 Redémarrer le serveur ssh. `systemctl restart ssh`  
-.mdp clé privée: "WTP666cbx"
+mdp actuel clé privée: "WTP666cbx"
 
 ## MariaDb Config
 __Install :__ 
@@ -110,6 +113,8 @@ __Création script :__
 `vim addDB.sh`  
 _Inclure le contenu de scripts/addDB.sh et enregistrer_
 
+Le script de création d'un nouveau user + db + apache se trouve dans `/home/nimda/scripts/addUser.sh`
+
 ###Installation de PHP-FPM
 Installer le service :
     
@@ -119,7 +124,7 @@ Installer le service :
 
 ####- Installation
 
-Procéder aux commandes ci-dessous :
+Procédez aux commandes ci-dessous :
     
     - sudo apt install nginx
     
@@ -135,7 +140,7 @@ Cette commande doit vous retourner une présentation du service nginx en cours
 
 Pour accéder à votre server depuis un navigateur, pointez vers son ip
 
-Verifier votre ip :
+Verifiez votre ip :
 
     -ip addr show "interface" | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
     
@@ -165,6 +170,7 @@ Restart le server :
 Réalisez des configurations sans perdre les connections :
 
     - sudo systemctl reload nginx
+           
 
 ###Ajouter un site web
 Les informations placées entre les crochets [  ] vous sont propres.
