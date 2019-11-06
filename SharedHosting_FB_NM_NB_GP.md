@@ -1,7 +1,3 @@
-
-##GITHUB
-[Lien Git](https://github.com/BergmannFlorian/webservunix)
-
 ## VERSION
 Debian 10.1
 
