@@ -6,44 +6,44 @@
 Debian 10.1
 
 ## VM config
-1 NAT network ->  ens32  
-1 bridged newtwork card -> ens34
+__NAT network :__ ens32  
+__bridged newtwork card :__ ens34
 
-## VM INFO
-__Informations Login :__
+## VM users
+__Name root :__ root  
+__Mdp :__ WTP666cbx  
 
-- __Id Admin :__ root
-- __Mdp :__ WTP666cbx
+__Name user :__ Nimda  
+__Mdp :__ WTP666cbx  
 
-- __Id :__ Nimda. 
-- __Mdp :__ WTP666cbx
+## Informations Réseaux :
+__Type :__ NAT  
+__Server Name :__ cornflakes  
+__Card NAT Config :__ iface ens32 inet dhcp  
+__Card Bridged Config :__ iface ens34 inet static  
+- address 10.229.42.31
+- netmask 255.255.240.0
+- network 10.229.42.0
+- broadcast 10.229.42.255
+- gateway 10.229.32.1
+- dns-nameservers 10.229.28.22 10.229.28.2
+- dns-domain cpnv.ch
+- dns-search cpnv.ch
 
-__Informations Réseaux :__
-- __Type :__ NAT  
-- __Server Name :__ cornflakes  
-- __Card NAT Config :__ iface ens32 inet dhcp  
-- __Card Bridged Config :__ iface ens34 inet static  
-    - address 10.229.42.31
-    - netmask 255.255.240.0
-    - network 10.229.42.0
-    - broadcast 10.229.42.255
-    - gateway 10.229.32.1
-    - dns-nameservers 10.229.28.22 10.229.28.2
-    - dns-domain cpnv.ch
-    - dns-search cpnv.ch
-
-__Install :__ apt-get install mariadb-server -y  
 ## Paquest installés  
-- ufw `apt-get install ufw`  
-    ports ouverts: 80, 443, 22, 3306  
-    `ufw allow 80`  
-    `ufw allow 443`  
-    `ufw allow 22`  
-    `ufw allow 3306`  
-
-- fail2ban `apt-get install fail2ban`  
-- sudo `apt-get install sudo`  
-    tous le droits sudo à nimda `nimda  ALL=(ALL:ALL) ALL`  
+ufw  
+`apt-get install ufw`  
+ports ouverts: 80, 443, 22, 3306  
+`ufw allow 80`  
+`ufw allow 443`  
+`ufw allow 22`  
+`ufw allow 3306`  
+fail2ban  
+`apt-get install fail2ban`  
+sudo  
+`apt-get install sudo`  
+tous le droits sudo à nimda  
+`nimda  ALL=(ALL:ALL) ALL`  
 
 
 ## Config ssh  
