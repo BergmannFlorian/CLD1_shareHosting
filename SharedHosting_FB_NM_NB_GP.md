@@ -44,6 +44,7 @@ __Informations Réseaux :__
     `ufw allow 443`
     `ufw allow 22`  
     `ufw allow 3306`  
+    
 ##Installation du framework de prévention
 - fail2ban `apt-get install fail2ban`
 
@@ -96,3 +97,58 @@ __Création script :__
 `touch addDB.sh`  
 `vim addDB.sh`  
 _Inclure le contenu de scripts/addDB.sh et enregistrer_
+
+###Mise en place de Nginx
+####- Installation
+
+Procéder aux commandes ci-dessous :
+    
+    - sudo apt install nginx
+    
+####- Paramètrage du par-feu
+
+    - sudo ufw allow 'Nginx HTTP'
+    
+####- Vérifier le fonctionnement du server
+
+    - systemctl status nginx
+    
+Cette commande doit vous retourner une présentation du service nginx en cours
+
+Pour accéder à votre server depuis un navigateur, pointez vers son ip
+
+Verifier votre ip :
+
+    -ip addr show "interface" | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
+    
+Changer le "interface" par l'interface principale de votre machine
+
+Faite la commande suivante pour trouver le nom de votre interface
+
+    - ip a
+
+Remplacer le "interface" de la commande précédente par le nom de votre interface en ligne
+
+Accéder à votre site en tappant son ip dans la barre d'un navigateur
+
+####- Gérer le fonctionnement du server
+Stopper le server :
+
+    - sudo systemctl stop nginx
+    
+Start le server :
+
+    - sudo systemctl start nginx
+    
+Restart le server :
+
+    - sudo systemctl restart nginx
+    
+Réaliser des configurations sans perdre les connections :
+
+    - sudo systemctl reload nginx
+    
+###Installation de PHP-FPM
+Installer le service :
+    
+    - sudo apt install php-fpm
