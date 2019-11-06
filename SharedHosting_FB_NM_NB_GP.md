@@ -42,8 +42,9 @@ __Install :__ apt-get install mariadb-server -y
     `ufw allow 3306`  
 
 - fail2ban `apt-get install fail2ban`  
-- sudo `apt-get install sudo`  
-    tous le droits sudo à nimda `nimda  ALL=(ALL:ALL) ALL`  
+- sudo `apt-get install sudo`
+    - ouvrir le fichier de config avec `visudo`
+    - tous le droits sudo à l'utilisateur nimda `nimda ALL=(ALL:ALL) ALL`  
 
 
 ## Config ssh  
@@ -54,7 +55,7 @@ Modifier le fichier `/etc/ssh/sshd_config` et configurer les paramètres suivant
 - `PasswordAuthentification` -> `no`  
 
 Redémarrer le serveur ssh. `systemctl restart ssh`  
-.mdp clé privée: "WTP666cbx"
+mdp actuel clé privée: "WTP666cbx"
 
 ## MariaDb Config
 __Install :__ 
@@ -80,3 +81,5 @@ __Création script :__
 `touch addDB.sh`  
 `vim addDB.sh`  
 _Inclure le contenu de scripts/addDB.sh et enregistrer_
+
+Le script de création d'un nouveau user + db + apache se trouve dans `/home/nimda/scripts/addUser.sh`
